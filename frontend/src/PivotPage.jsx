@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PivotTableUI from "react-pivottable/PivotTableUI";
-import "react-pivottable/pivottable.css"; // UI styles
+import "react-pivottable/pivottable.css";
 
 export default function PivotPage() {
   const [rows, setRows] = useState([]);
@@ -8,9 +8,9 @@ export default function PivotPage() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("http://localhost:4000/api");
+      const res = await fetch("http://localhost:4000/api/data");
       const data = await res.json();
-      setRows(data); // array of objects
+      setRows(data);
     })().catch(console.error);
   }, []);
 
